@@ -6,7 +6,7 @@ Personal home lab for Security Operations Center (SOC) practice using Wazuh SIEM
 ## Overview
 
 This project simulates a real-world SOC environment with:
-- Wazuh all-in-one deployment (manager, indexer, dashboard) via Docker on Ubuntu 22.04.
+- Wazuh all-in-one deployment (manager, indexer, dashboard) via Docker on Ubuntu 24.04.
 - Windows 11 endpoint with Wazuh agent and Sysmon (SwiftOnSecurity config).
 
 - Log collection, alert generation, threat hunting, and MITRE ATT&CK mapping.
