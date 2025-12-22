@@ -38,3 +38,43 @@ Close
 
 ## Reason:
 The event represents a routine successful authentication without indicators of compromise. No escalation or further investigation is required at Level-1.
+
+
+### Alert 002
+Evidence:
+<img width="1837" height="54" alt="alert-002-overview" src="https://github.com/user-attachments/assets/9f759351-7baa-4628-9939-b7345ac44068" />
+
+## Alert Information
+
+Alert name: Service startup type was changed
+
+Rule ID: 61104
+
+Severity level: 3
+
+Timestamp: Dec 22, 2025 14:04:10
+
+Source host: windows_lab
+
+Data source: Windows System (Service Control Manager)
+
+## Observed Activity
+The Windows Background Intelligent Transfer Service (BITS) startup type was changed from Manual to Automatic. The change was logged by the Service Control Manager (Event ID 7040) and is informational in nature, with no associated user or process details.
+
+## Preliminary Classification
+Informational
+
+## MITRE ATT&CK Mapping
+
+Tactic: N/A
+
+Technique: N/A
+
+Justification: The observed service configuration change lacks evidence of adversarial intent or follow-on malicious activity. MITRE ATT&CK mapping requires additional context that is not present in this event.
+
+## Next Action
+
+Close
+
+## Reason:
+The service startup type change for BITS appears consistent with normal system or update-related behavior. No indicators of compromise, suspicious processes, or repeated changes were observed. No escalation or further monitoring is required at Level-1.
