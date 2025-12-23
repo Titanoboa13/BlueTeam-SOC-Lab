@@ -22,10 +22,11 @@ Only generic Windows logon and system policy alerts were observed.
 ## Impact
 An attacker using PowerShell in this manner could perform reconnaissance without triggering meaningful alerts, increasing dwell time.
 
-## Root Cause (Hypothesis)
-- Sysmon rules may not sufficiently cover PowerShell command-line inspection.
-- Wazuh ruleset may lack correlation for PowerShell evasion flags.
-- PowerShell Script Block Logging is not enabled.
+## Root Cause Confirmation
+PowerShell Script Block Logging (Event ID 4104) is successfully generated and visible in the local Windows Event Viewer under:
+Microsoft-Windows-PowerShell/Operational.
+
+However, these events are not ingested by Wazuh, confirming that the detection gap is caused by missing event channel collection rather than endpoint logging misconfiguration.
 
 ## Recommendation
 - Enable PowerShell Script Block Logging on Windows endpoints.
