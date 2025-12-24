@@ -35,3 +35,9 @@ However, these events are not ingested by Wazuh, confirming that the detection g
 
 ## SOC Relevance
 This gap highlights the importance of continuous detection tuning and validates the need for proactive threat hunting in SOC operations.
+
+## Resolution Outcome
+After configuring the Wazuh agent to collect the Microsoft-Windows-PowerShell/Operational event channel, PowerShell Script Block events (Event ID 4104) became visible in Wazuh.
+
+Subsequent PowerShell execution generated a detection mapped to MITRE ATT&CK T1082 (System Information Discovery), confirming successful visibility and detection of PowerShell-based discovery activity.
+
