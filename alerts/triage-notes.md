@@ -78,3 +78,43 @@ Close
 
 ## Reason:
 The service startup type change for BITS appears consistent with normal system or update-related behavior. No indicators of compromise, suspicious processes, or repeated changes were observed. No escalation or further monitoring is required at Level-1.
+
+
+### Alert 003
+Evidence:
+<img width="1843" height="774" alt="wazuh_powershell_4104_detection" src="https://github.com/user-attachments/assets/75d70d4c-f7c6-4cb8-92ea-fe139ae5cfa5" />
+
+## Alert Information
+
+Alert name: Powershell script querying system environment variables
+Rule ID: 91816
+Severity level: 4
+Timestamp: Dec 24, 2025 09:53:23
+Source host: windows_lab
+Data source: Microsoft-Windows-PowerShell/Operational (Event ID 4104)
+
+## Observed Activity
+
+A PowerShell Script Block execution was captured on the Windows endpoint. The logged script exports local security policy configuration using secedit and queries the LSAAnonymousNameLookup setting. The activity represents system configuration and security-related information discovery performed via PowerShell.
+
+Script Block Logging successfully recorded the executed PowerShell content, providing full visibility into the command logic.
+
+## Preliminary Classification
+
+Informational
+
+## MITRE ATT&CK Mapping
+
+Tactic: Discovery
+Technique: T1082 – System Information Discovery
+
+Justification:
+The PowerShell script performs system and security configuration enumeration, which aligns with discovery behavior. Although this technique is commonly abused by adversaries, the observed activity occurred in a controlled lab environment for detection validation and lacks indicators of malicious intent.
+
+## Next Action
+
+Close
+
+## Reason
+
+This alert was generated as part of controlled testing to validate PowerShell Script Block Logging ingestion and detection within Wazuh. No follow-on suspicious activity, persistence mechanisms, or privilege escalation indicators were observed. The alert confirms successful visibility and detection capability rather than representing an active threat.
